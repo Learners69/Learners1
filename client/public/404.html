@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    const pathSegments = window.location.pathname.split('/');
+    const repoName = pathSegments[1]; // Get repository name from URL
+    const path = pathSegments.slice(2).join('/'); // Get the rest of the path
+    
+    // Redirect to the main page with the path as a hash
+    window.location.replace(
+      window.location.origin +
+      (repoName ? '/' + repoName : '') +
+      '/#' +
+      (path || '/')
+    );
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
